@@ -7,7 +7,8 @@ names, tokens or passwords are printed, so the output is safe to attach to an is
 What it does (the same requests as the Jopox+ app / the integration):
   POST /api/v1/myjopoxaccount/login
   GET  /api/v1/lockerrooms
-  GET  /api/v1/site/subsites/<subsiteId>/calendar/upcoming?year=Y&month=M&showMyEventsOnly=false|true
+  GET  /api/v1/site/subsites/<subsiteId>/calendar/upcoming
+       ?year=Y&month=M&showMyEventsOnly=false|true
 
 Credentials: JOPOX_EMAIL / JOPOX_PASSWORD environment variables, or prompts
 (the password prompt is hidden). Nothing is stored.
@@ -88,7 +89,10 @@ def main():
     meta, sub = room["metadataId"], room["subsiteId"]
 
     now = datetime.date.today()
-    base_path = f"/api/v1/site/subsites/{sub}/calendar/upcoming?year={now.year}&month={now.month}&showMyEventsOnly="
+    base_path = (
+        f"/api/v1/site/subsites/{sub}/calendar/upcoming"
+        f"?year={now.year}&month={now.month}&showMyEventsOnly="
+    )
     for flag in ("false", "true"):
         st, raw = req(base_path + flag, token=token, meta=meta)
         print(f"\n== showMyEventsOnly={flag} -> HTTP {st}")
@@ -100,7 +104,7 @@ def main():
         if flag == "true":
             print(json.dumps(shape(j), indent=2, ensure_ascii=False)[:3500])
 
-    print("\nDone. The output has no tokens or personal text; review it, then attach it to your issue.")
+    print("\nDone. The output has no tokens or personal text; review it before sharing.")
 
 
 if __name__ == "__main__":

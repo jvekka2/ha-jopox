@@ -74,4 +74,4 @@ Attendance and comment routes exist under `/api/v1/site/subsites/{id}/(events|ga
 
 ## Being a good citizen
 
-This integration polls at most every 15 minutes (30 by default), makes one login plus one GET per refresh, and never writes. Please keep any tooling built on these notes equally gentle.
+This integration polls at most every 15 minutes (every 4 hours by default), makes one login plus one GET per refresh, and never writes. Please keep any tooling built on these notes equally gentle.
