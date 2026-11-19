@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Jopox+ kirjautuminen",
+        "description": "Käytä samaa sähköpostia ja salasanaa kuin Jopox+ -sovelluksessa. Tiedot tallennetaan vain tähän Home Assistantiin ja niitä käytetään vain lukemiseen.",
+        "data": { "email": "Sähköposti", "password": "Salasana" }
+      },
+      "room": {
+        "title": "Valitse joukkue",
+        "data": { "room": "Joukkue" }
+      },
+      "reauth_confirm": {
+        "title": "Jopox+ salasana",
+        "data": { "password": "Salasana" }
+      }
+    },
+    "error": {
+      "invalid_auth": "Väärä sähköposti tai salasana",
+      "cannot_connect": "Jopoxiin ei saatu yhteyttä",
+      "no_rooms": "Tilillä ei löytynyt joukkueita"
+    },
+    "abort": {
+      "already_configured": "Tämä joukkue on jo lisätty",
+      "reauth_successful": "Salasana päivitetty"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Jopox-asetukset",
+        "data": {
+          "hide_declined": "Piilota tapahtumat, joihin olen vastannut OUT",
+          "scan_minutes": "Päivitysväli (minuuttia)"
+        }
+      }
+    }
+  }
+}

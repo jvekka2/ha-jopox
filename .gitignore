@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+*.har
+*.flows
+capture/
+.env
+secrets.yaml

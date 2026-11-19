@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Jopox+ login",
+        "description": "Use the same email and password as in the Jopox+ app. They are stored in this Home Assistant only and used read-only.",
+        "data": { "email": "Email", "password": "Password" }
+      },
+      "room": {
+        "title": "Choose team",
+        "data": { "room": "Team" }
+      },
+      "reauth_confirm": {
+        "title": "Jopox+ password",
+        "data": { "password": "Password" }
+      }
+    },
+    "error": {
+      "invalid_auth": "Wrong email or password",
+      "cannot_connect": "Could not reach Jopox",
+      "no_rooms": "No teams found for this account"
+    },
+    "abort": {
+      "already_configured": "This team is already configured",
+      "reauth_successful": "Password updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Jopox options",
+        "data": {
+          "hide_declined": "Hide events I have declined (OUT)",
+          "scan_minutes": "Update interval (minutes)"
+        }
+      }
+    }
+  }
+}
